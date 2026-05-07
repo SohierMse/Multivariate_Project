@@ -1,0 +1,274 @@
+/* assets/style.css - Complete Theme with NO White Text */
+
+/* Main background - soft pink gradient */
+.stApp {
+    background: linear-gradient(135deg, 
+        #ffe9f4 0%, 
+        #ffe0f0 50%,
+        #ffd6ea 100%);
+}
+
+/* Sidebar styling - soft lavender */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, 
+        #f5e6f3 0%, 
+        #fce4ec 100%);
+    border-right: 2px solid #ffb6d9;
+}
+
+/* ========== SIDEBAR TEXT COLORS - NO WHITE ========== */
+/* Sidebar headers - pink */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #c44569 !important;
+}
+
+/* Sidebar body text - dark purple */
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] div,
+[data-testid="stSidebar"] span,
+[data-testid="stSidebar"] .stCaption,
+[data-testid="stSidebar"] .stMarkdown {
+    color: #4a2a4a !important;
+}
+
+/* Sidebar metric labels - dark purple */
+[data-testid="stSidebar"] .stMetricLabel {
+    color: #4a2a4a !important;
+}
+
+/* Sidebar metric values - pink */
+[data-testid="stSidebar"] .stMetricValue {
+    color: #c44569 !important;
+}
+
+/* ========== MAIN CONTENT TEXT COLORS - NO WHITE ========== */
+/* Main headers - pink */
+h1, h2, h3, h4, h5, h6 {
+    color: #c44569 !important;
+}
+
+/* Main body text - dark purple */
+p, li, .stMarkdown, .stText, div, span {
+    color: #4a2a4a !important;
+}
+
+/* Caption text - dark purple */
+.stCaption {
+    color: #4a2a4a !important;
+}
+
+/* ========== TABLE STYLES ========== */
+.dataframe {
+    border-radius: 15px;
+    background: white;
+    border: 1px solid #ffb6d9;
+}
+
+.dataframe th {
+    background: #ffd6ea !important;
+    color: #c44569 !important;
+    font-weight: 600 !important;
+}
+
+.dataframe td {
+    color: #4a2a4a !important;
+}
+
+table {
+    color: #4a2a4a !important;
+}
+
+/* ========== METRIC CARDS ========== */
+[data-testid="stMetricValue"] {
+    color: #c44569 !important;
+    font-size: 2rem !important;
+    font-weight: bold !important;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #4a2a4a !important;
+    font-weight: 500 !important;
+}
+
+[data-testid="stMetricDelta"] {
+    color: #c44569 !important;
+}
+
+[data-testid="stMetric"] {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 10px;
+    border: 1px solid #ffb6d9;
+}
+
+/* ========== BUTTONS ========== */
+.stButton > button {
+    background: linear-gradient(135deg, #ff9bc0, #ff6b9d);
+    color: white !important;
+    border: none;
+    border-radius: 30px;
+    padding: 0.6rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.stButton > button:hover {
+    background: linear-gradient(135deg, #ffb6d9, #ff8cae);
+    color: white !important;
+}
+
+/* ========== TABS ========== */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 12px;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: #ffe0f0;
+    border-radius: 30px;
+    padding: 10px 24px;
+    color: #c44569 !important;
+    font-weight: 500;
+}
+
+.stTabs [aria-selected="true"] {
+    background: linear-gradient(135deg, #ff9bc0, #ff6b9d);
+    color: white !important;
+}
+
+/* ========== EXPANDERS ========== */
+.streamlit-expanderHeader {
+    background: #ffe0f0;
+    color: #c44569 !important;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.streamlit-expanderHeader:hover {
+    background: #ffd6ea;
+}
+
+/* ========== ALERT BOXES ========== */
+.stAlert {
+    border-radius: 15px;
+    border-left: 5px solid #ff6b9d;
+}
+
+.stInfo {
+    background: rgba(255, 182, 217, 0.15);
+    border-radius: 15px;
+    border-left: 4px solid #ff6b9d;
+    color: #4a2a4a !important;
+}
+
+.stSuccess {
+    background: rgba(144, 238, 144, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid #7bcc7b;
+    color: #4a2a4a !important;
+}
+
+.stWarning {
+    background: rgba(255, 165, 0, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid #ffa500;
+    color: #4a2a4a !important;
+}
+
+.stError {
+    background: rgba(255, 107, 157, 0.1);
+    border-radius: 15px;
+    border-left: 4px solid #ff6b9d;
+    color: #4a2a4a !important;
+}
+
+/* ========== PROGRESS BAR ========== */
+.stProgress > div > div {
+    background: linear-gradient(90deg, #ff9bc0, #ff6b9d);
+    border-radius: 10px;
+}
+
+/* ========== SELECTBOX (DROPDOWN) ========== */
+.stSelectbox > div > div {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #ffb6d9;
+}
+
+.stSelectbox label {
+    color: #4a2a4a !important;
+}
+
+.stSelectbox > div > div > div {
+    color: #4a2a4a !important;
+}
+
+div[data-baseweb="select"] li {
+    color: #4a2a4a !important;
+}
+
+div[data-baseweb="select"] li[aria-selected="true"] {
+    background-color: #ffd6ea !important;
+    color: #c44569 !important;
+}
+
+/* ========== SLIDER ========== */
+.stSlider > div > div > div {
+    background-color: #ff6b9d;
+}
+
+/* ========== CHECKBOX ========== */
+.stCheckbox label {
+    color: #4a2a4a !important;
+}
+
+/* ========== TEXT INPUT ========== */
+.stTextInput > div > div > input {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #ffb6d9;
+    color: #4a2a4a !important;
+}
+
+.stTextInput label {
+    color: #4a2a4a !important;
+}
+
+/* ========== NUMBER INPUT ========== */
+.stNumberInput label {
+    color: #4a2a4a !important;
+}
+
+.stNumberInput > div > div > input {
+    border-radius: 20px;
+    border: 1px solid #ffb6d9;
+    color: #4a2a4a !important;
+}
+
+/* ========== CODE BLOCKS ========== */
+code {
+    background-color: #ffe0f0 !important;
+    color: #c44569 !important;
+    border-radius: 8px;
+}
+
+/* ========== DIVIDER ========== */
+hr {
+    border-color: #ffb6d9 !important;
+}
+
+/* ========== RADIO BUTTONS ========== */
+.stRadio label {
+    color: #4a2a4a !important;
+}
+
+/* ========== MULTISELECT ========== */
+.stMultiSelect label {
+    color: #4a2a4a !important;
+}
+
+/* ========== DATE INPUT ========== */
+.stDateInput label {
+    color: #4a2a4a !important;
+}
