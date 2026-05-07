@@ -1,11 +1,38 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+import os
+from pathlib import Path
 
 @st.cache_data
 def load_data():
     """Load the marketing campaign dataset with all preprocessing"""
-    df = pd.read_csv("data/marketing_campaign.csv", sep="\t")
+    
+    # Try multiple possible file paths
+    possible_paths = [
+        "data/marketing_campaign.csv",
+        "../data/marketing_campaign.csv",
+        "./data/marketing_campaign.csv",
+        "marketing_campaign.csv",
+        "../marketing_campaign.csv",
+    ]
+    
+    df = None
+    for path in possible_paths:
+        if os.path.exists(path):
+            df = pd.read_csv(path, sep="\t")
+            break
+    
+    # If still not found, try to get the directory of the current file
+    if df is None:
+        current_dir = Path(__file__).parent.parent
+        file_path = current_dir / "data" / "marketing_campaign.csv"
+        if file_path.exists():
+            df = pd.read_csv(file_path, sep="\t")
+    
+    if df is None:
+        st.error("Could not find marketing_campaign.csv file. Please check the file path.")
+        return None
     
     # Remove constant columns
     df = df.drop(['Z_CostContact', 'Z_Revenue'], axis=1)
@@ -43,6 +70,9 @@ def load_data():
 
 def get_dataset_info(df):
     """Return dataset information"""
+    if df is None:
+        return {'rows': 0, 'columns': 0, 'memory': '0 MB', 'missing': 0}
+    
     return {
         'rows': df.shape[0],
         'columns': df.shape[1],
@@ -52,6 +82,9 @@ def get_dataset_info(df):
 
 def get_numeric_columns(df):
     """Get numeric columns excluding ID"""
+    if df is None:
+        return []
+    
     numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
     if 'ID' in numeric_cols:
         numeric_cols.remove('ID')
